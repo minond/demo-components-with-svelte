@@ -1,0 +1,48 @@
+<label>
+    <span>{{label}}</span>
+    <input ref:input value="{{value || ''}}" placeholder="{{placeholder}}" />
+</label>
+
+
+<style>
+label {
+    display: block;
+    white-space: nowrap;
+}
+
+span {
+    display: inline-block;
+    min-width: 85px;
+    padding: 10px 30px 10px 10px;
+    text-align: right;
+}
+
+span,
+input  {
+    color: #8898AA;
+    letter-spacing: 1px;
+    font-family: "Helvetica Neue", Helvetica;
+    font-weight: 200;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    width: 300px;
+}
+
+input::placeholder {
+    color: #e0e0e0;
+    font-weight: lighter;
+}
+</style>
+
+<script>
+export default {
+    methods: {
+        get_value() {
+            return this.refs.input.value;
+        }
+    }
+}
+</script>

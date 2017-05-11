@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="browser-ie7 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="browser-ie8 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="browser-ie9 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="browser-modern"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>demo-components-with-svelte</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    </head>
+    <body>
+        <div id="vanilla_payment_form"></div>
+        <div id="react_payment_form"></div>
+
+        <!-- base components -->
+        <script src="/build/components.js"></script>
+
+        <!-- svelte dependencies -->
+        <!-- ;) -->
+
+        <!-- react dependencies -->
+        <script src="/node_modules/react/dist/react.min.js"></script>
+        <script src="/node_modules/react-dom/dist/react-dom.min.js"></script>
+
+        <script src="/src/interfaces/common.js"></script>
+
+        <!-- using vanilla js interface -->
+        <script src="/src/interfaces/vanilla.js"></script>
+
+        <!-- using react interface -->
+        <script src="/src/interfaces/react.js"></script>
+    </body>
+</html>

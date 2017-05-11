@@ -1,0 +1,55 @@
+<form on:submit='submit(event)'>
+    <Input ref:name value="{{name}}" label="Name" placeholder="Jane Dow" />
+    <Input ref:phone value="{{phone}}" label="Phone" placeholder="(123) 456-7890" />
+    <Input ref:card value="{{card}}" label="Card" placeholder="4242" />
+    <Input ref:exp value="{{exp}}" label="Exp." placeholder="MM/YY" />
+    <Input ref:cvc value="{{cvc}}" label="CVC" placeholder="CVC" />
+
+    <Button label="Pay" />
+</form>
+
+<style>
+form {
+    border: 0;
+    box-shadow: 0px 0px 5px #c7c7c7;
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+}
+
+Button {
+    display: block;
+    margin: 30px auto 10px auto;
+}
+</style>
+
+<script>
+import Input from './Input.html';
+import Button from './Button.html';
+
+export default {
+    components: {
+        Input,
+        Button,
+    },
+
+    methods: {
+        is_valid() {
+            const { name, phone, card, exp, cvc } = this.refs;
+
+            return !!name.get_value() &&
+                !!phone.get_value() &&
+                !!card.get_value() &&
+                !!exp.get_value() &&
+                !!cvc.get_value();
+        },
+
+        submit(event) {
+            if (!this.is_valid()) {
+                event.preventDefault();
+                alert('Invalid payment information!');
+            }
+        }
+    }
+}
+</script>
